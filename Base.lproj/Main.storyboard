@@ -124,7 +124,7 @@
         <scene sceneID="GWJ-t1-RYC">
             <objects>
                 <tableViewController id="bk9-U2-567" customClass="EMTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CgI-o4-ecn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="CgI-o4-ecn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -141,13 +141,13 @@
                                             <rect key="frame" x="276" y="-9" width="36" height="80"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="36" id="ffg-Jw-Qhy"/>
+                                                <constraint firstAttribute="width" constant="36" id="BQk-Ye-fvi"/>
                                                 <constraint firstAttribute="width" constant="36" id="hSl-Oz-jY3"/>
                                                 <constraint firstAttribute="height" constant="80" id="lKK-cV-dhF"/>
                                                 <constraint firstAttribute="width" constant="36" id="mlA-TH-ESM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -157,7 +157,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92V-si-rLn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92V-si-rLn">
                                             <rect key="frame" x="101" y="-9" width="158" height="80"/>
                                             <animations/>
                                             <constraints>
@@ -167,7 +167,7 @@
                                                 <constraint firstAttribute="width" constant="158" id="p7p-cO-1UB"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -179,16 +179,16 @@
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQ6-jg-Th4">
-                                            <rect key="frame" x="8" y="-9" width="80" height="80"/>
+                                            <rect key="frame" x="8" y="-1" width="80" height="80"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="5O5-tl-LAh"/>
                                                 <constraint firstAttribute="height" constant="80" id="FRv-fn-v1I"/>
                                                 <constraint firstAttribute="width" constant="80" id="HrD-hZ-U5w"/>
+                                                <constraint firstAttribute="width" constant="80" id="USF-Q1-YrM"/>
                                                 <constraint firstAttribute="width" secondItem="eQ6-jg-Th4" secondAttribute="height" multiplier="1:1" id="fOL-hr-Rn5"/>
                                                 <constraint firstAttribute="width" secondItem="eQ6-jg-Th4" secondAttribute="height" multiplier="1:1" id="rrm-wh-b5z"/>
                                                 <constraint firstAttribute="width" constant="80" id="uCp-8D-K3A"/>
-                                                <constraint firstAttribute="width" constant="80" id="y92-GA-o9N"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -204,17 +204,23 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="92V-si-rLn" firstAttribute="leading" secondItem="eQ6-jg-Th4" secondAttribute="trailing" constant="13" id="3th-NR-Ij8"/>
-                                        <constraint firstItem="92V-si-rLn" firstAttribute="bottom" secondItem="eQ6-jg-Th4" secondAttribute="bottom" id="Osi-Hd-dYz"/>
-                                        <constraint firstItem="92V-si-rLn" firstAttribute="top" secondItem="eQ6-jg-Th4" secondAttribute="top" id="TmQ-K1-OmA"/>
-                                        <constraint firstItem="eQ6-jg-Th4" firstAttribute="bottom" secondItem="aRL-Qd-7ns" secondAttribute="bottomMargin" id="ahI-Ik-Yda"/>
-                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="leading" secondItem="92V-si-rLn" secondAttribute="trailing" constant="17" id="mN0-2q-CB8"/>
+                                        <constraint firstAttribute="bottom" secondItem="eQ6-jg-Th4" secondAttribute="bottom" id="AT5-x9-dpI"/>
+                                        <constraint firstItem="92V-si-rLn" firstAttribute="top" secondItem="aRL-Qd-7ns" secondAttribute="topMargin" constant="-17" id="JJT-1a-7RS"/>
+                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="leading" secondItem="92V-si-rLn" secondAttribute="trailing" constant="17" id="L8N-OP-Bl4"/>
+                                        <constraint firstItem="92V-si-rLn" firstAttribute="leading" secondItem="eQ6-jg-Th4" secondAttribute="trailing" constant="13" id="M5j-aM-lwR"/>
+                                        <constraint firstItem="92V-si-rLn" firstAttribute="baseline" secondItem="Ne6-0r-SXJ" secondAttribute="baseline" id="WuB-iw-tuh"/>
+                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="bottom" secondItem="aRL-Qd-7ns" secondAttribute="bottomMargin" id="i4Q-xA-WvD"/>
+                                        <constraint firstItem="92V-si-rLn" firstAttribute="firstBaseline" secondItem="Ne6-0r-SXJ" secondAttribute="firstBaseline" id="i7u-ZQ-54z"/>
                                         <constraint firstItem="eQ6-jg-Th4" firstAttribute="top" secondItem="aRL-Qd-7ns" secondAttribute="topMargin" constant="-17" id="myG-yg-LLn"/>
-                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="trailing" secondItem="aRL-Qd-7ns" secondAttribute="trailingMargin" id="rbd-lP-JbE"/>
-                                        <constraint firstItem="92V-si-rLn" firstAttribute="baseline" secondItem="Ne6-0r-SXJ" secondAttribute="baseline" id="vWS-7X-hQR"/>
-                                        <constraint firstItem="eQ6-jg-Th4" firstAttribute="leading" secondItem="aRL-Qd-7ns" secondAttribute="leadingMargin" id="whk-Is-I1c"/>
-                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="firstBaseline" secondItem="92V-si-rLn" secondAttribute="firstBaseline" id="zhr-F5-PuH"/>
+                                        <constraint firstItem="Ne6-0r-SXJ" firstAttribute="trailing" secondItem="aRL-Qd-7ns" secondAttribute="trailingMargin" id="naF-9z-vpb"/>
+                                        <constraint firstItem="eQ6-jg-Th4" firstAttribute="centerY" secondItem="aRL-Qd-7ns" secondAttribute="centerY" id="o15-6Z-Hse"/>
+                                        <constraint firstItem="eQ6-jg-Th4" firstAttribute="leading" secondItem="aRL-Qd-7ns" secondAttribute="leadingMargin" id="vSF-pA-Cv6"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="myG-yg-LLn"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>

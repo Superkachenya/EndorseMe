@@ -24,12 +24,12 @@
     [super viewDidLoad];
     self.doctorsImg.layer.cornerRadius = self.doctorsImg.frame.size.width / 2;
     self.doctorsImg.clipsToBounds = YES;
+    self.doctorsImg.layer.borderWidth = 3.0f;
+    self.doctorsImg.layer.borderColor = [UIColor orangeColor].CGColor;
     
     index = 0;
     self.doctor = self.doctors [index];
-    self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
-    self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
+    [self fillTheView];
    
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(plusButton:)];
     [swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
@@ -58,9 +58,7 @@
     self.doctor.rating = @(self.doctor.rating.integerValue +1);
     index = [self returnToTheBeggining];
     self.doctor = self.doctors[index];
-    self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
-    self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
+    [self fillTheView];
 
 }
 - (IBAction)minusButton:(id)sender
@@ -68,9 +66,7 @@
     index++;
     index = [self returnToTheBeggining];
     self.doctor = self.doctors[index];
-    self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
-    self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
+    [self fillTheView];
 
 }
 
@@ -83,6 +79,12 @@
         EMTVController.doctor = self.doctor;
         
     }
+}
+-(void)fillTheView
+{
+    self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
+    self.doctorsName.text = self.doctor.nameOfDoctor;
+    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
 }
 
 @end
