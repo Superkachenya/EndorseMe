@@ -10,7 +10,7 @@
 
 @implementation Doctor
 
--(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating: (NSUInteger)rating
+-(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating: (NSNumber *)rating
 {
     self = [super init];
     if (self) {

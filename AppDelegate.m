@@ -20,48 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DataSource" ofType:@"plist"];
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     _doctors = [[NSMutableArray alloc] init];
+    NSArray *tempArrayN = [dict objectForKey:@"nameOfDoctor"];
+    NSArray *tempArrayF = [dict objectForKey:@"faceOfDoctor"];
+    NSArray *tempArrayR = [dict objectForKey:@"rating"];
     
-    Doctor *doctor = [[Doctor alloc] initWithName:@"First Doctor" andFace:@"0" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Second Doctor" andFace:@"1" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Third Doctor" andFace:@"2" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Fourth Doctor" andFace:@"3" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Fifth Doctor" andFace:@"4" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Sixth Doctor" andFace:@"5" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Seventh Doctor" andFace:@"6" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Eighth Doctor" andFace:@"7" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"War Doctor" andFace:@"8" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Ninth Doctor" andFace:@"9" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Tenth Doctor" andFace:@"10" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Eleventh Doctor" andFace:@"11" andRating:0];
-    [_doctors addObject:doctor];
-    
-    doctor = [[Doctor alloc] initWithName:@"Twelfth Doctor" andFace:@"12" andRating:0];
-    [_doctors addObject:doctor];
-    
-   UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    for (int i = 0; i < [tempArrayN count]; i++) {
+        Doctor *doctor = [[Doctor alloc] initWithName: tempArrayN[i] andFace:tempArrayF[i] andRating:tempArrayR[i]];
+        [_doctors addObject:doctor];
+    }
+
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     EMViewController *EMViewController = [navigationController viewControllers][0];
     EMViewController.doctors = _doctors;
     

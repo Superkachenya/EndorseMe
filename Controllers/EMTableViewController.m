@@ -49,7 +49,7 @@
     Doctor *doctor = self.doctors [indexPath.row];
     cell.doctorsFace.image = [UIImage imageNamed:doctor.faceOfDoctor];
     cell.doctorsName.text = doctor.nameOfDoctor;
-    cell.doctorsRating.text = [NSString stringWithFormat:@"%lu", (unsigned long)doctor.rating];
+    cell.doctorsRating.text = [NSString stringWithFormat:@"%@", doctor.rating];
     
     return cell;
 }

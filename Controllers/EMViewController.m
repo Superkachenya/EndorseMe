@@ -29,7 +29,7 @@
     self.doctor = self.doctors [index];
     self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
     self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.doctor.rating];
+    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
    
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(plusButton:)];
     [swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
@@ -55,12 +55,12 @@
 - (IBAction)plusButton:(id)sender
 {
     index++;
-    self.doctor.rating++;
+    self.doctor.rating = @(self.doctor.rating.integerValue +1);
     index = [self returnToTheBeggining];
     self.doctor = self.doctors[index];
     self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
     self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.doctor.rating];
+    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
 
 }
 - (IBAction)minusButton:(id)sender
@@ -70,7 +70,7 @@
     self.doctor = self.doctors[index];
     self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
     self.doctorsName.text = self.doctor.nameOfDoctor;
-    self.doctorsRating.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.doctor.rating];
+    self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
 
 }
 
