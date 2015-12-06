@@ -27,9 +27,13 @@
     NSArray *tempArrayN = [dict objectForKey:@"nameOfDoctor"];
     NSArray *tempArrayF = [dict objectForKey:@"faceOfDoctor"];
     NSArray *tempArrayR = [dict objectForKey:@"rating"];
+    NSArray *tempArrayD = [dict objectForKey:@"details"];
     
     for (int i = 0; i < [tempArrayN count]; i++) {
-        Doctor *doctor = [[Doctor alloc] initWithName: tempArrayN[i] andFace:tempArrayF[i] andRating:tempArrayR[i]];
+        Doctor *doctor = [[Doctor alloc] initWithName:tempArrayN [i]
+                                              andFace:tempArrayF [i]
+                                            andRating:tempArrayR [i]
+                                           andDetails:tempArrayD [i]];
         [_doctors addObject:doctor];
     }
 

@@ -10,13 +10,14 @@
 
 @implementation Doctor
 
--(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating: (NSNumber *)rating
+-(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating: (NSNumber *)rating andDetails:(NSString *)details
 {
     self = [super init];
     if (self) {
         _nameOfDoctor = name;
         _faceOfDoctor = face;
         _rating = rating;
+        _details = details;
     }
     return self;
 }

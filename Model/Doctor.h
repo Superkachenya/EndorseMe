@@ -12,8 +12,9 @@
 
 @property (nonatomic, strong) NSString *nameOfDoctor;
 @property (nonatomic, strong) NSString *faceOfDoctor;
-@property (nonatomic) NSNumber *rating;
+@property (nonatomic, strong) NSNumber *rating;
+@property (nonatomic,strong) NSString *details;
 
--(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating:(NSNumber *)rating;
+-(instancetype)initWithName:(NSString *)name andFace:(NSString *)face andRating:(NSNumber *)rating andDetails:(NSString *)details;
 
 @end
