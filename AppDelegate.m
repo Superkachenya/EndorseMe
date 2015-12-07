@@ -7,12 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "Doctor.h"
 #import "EMViewController.h"
+#import "Doctors.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) NSMutableArray *doctors;
 
 @end
 
@@ -20,26 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"DataSource" ofType:@"plist"];
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    _doctors = [[NSMutableArray alloc] init];
-    NSArray *tempArrayN = [dict objectForKey:@"nameOfDoctor"];
-    NSArray *tempArrayF = [dict objectForKey:@"faceOfDoctor"];
-    NSArray *tempArrayR = [dict objectForKey:@"rating"];
-    NSArray *tempArrayD = [dict objectForKey:@"details"];
     
-    for (int i = 0; i < [tempArrayN count]; i++) {
-        Doctor *doctor = [[Doctor alloc] initWithName:tempArrayN [i]
-                                              andFace:tempArrayF [i]
-                                            andRating:tempArrayR [i]
-                                           andDetails:tempArrayD [i]];
-        [_doctors addObject:doctor];
-    }
-
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     EMViewController *EMViewController = [navigationController viewControllers][0];
-    EMViewController.doctors = _doctors;
+    EMViewController.doctors = [Doctors setUpDoctors];
     
     return YES;
 }

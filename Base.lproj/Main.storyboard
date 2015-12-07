@@ -39,7 +39,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="endolse_minus"/>
                                 <connections>
-                                    <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2cR-MD-XHO"/>
                                     <action selector="skipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wap-P2-Tpf"/>
                                 </connections>
                             </button>
