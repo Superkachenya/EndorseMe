@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Doctor.h"
-#import "EMViewController.h"
 
-@class EMDetailsViewController;
+@protocol EMDetailsDelegate <NSObject>
+
+-(void)detailsViewcontrollerDismissedWithIndex:(NSUInteger)index;
+
+@end
 
 @interface EMDetailsViewController : UIViewController
 
@@ -22,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *doctorsRating;
 @property (weak, nonatomic) IBOutlet UITextView *doctorsDetails;
 @property (nonatomic) NSUInteger index;
+@property (nonatomic, weak) id<EMDetailsDelegate>delegate;
 
 
 @end

@@ -11,7 +11,7 @@
 #import "EMTableViewController.h"
 #import "EMDetailsViewController.h"
 
-@interface EMViewController : UIViewController
+@interface EMViewController : UIViewController <EMDetailsDelegate>
 
 @property (nonatomic, strong) NSMutableArray *doctors;
 @property (nonatomic,strong) Doctor *doctor;

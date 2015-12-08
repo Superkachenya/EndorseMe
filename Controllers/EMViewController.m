@@ -75,6 +75,7 @@
         EMDController.doctors = self.doctors;
         EMDController.doctor = self.doctor;
         EMDController.index = self.index;
+        EMDController.delegate = self;
     }
 }
 
@@ -84,6 +85,13 @@
     self.doctorsImg.image = [UIImage imageNamed:self.doctor.faceOfDoctor];
     self.doctorsName.text = self.doctor.nameOfDoctor;
     self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
+}
+
+-(void)detailsViewcontrollerDismissedWithIndex:(NSUInteger)index
+{
+    self.index = index;
+    [self fillTheView];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

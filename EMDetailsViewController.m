@@ -68,8 +68,8 @@
     self.doctorsDetails.text = self.doctor.details;
 }
 - (IBAction)cancelButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.delegate detailsViewcontrollerDismissedWithIndex:self.index];
 }
-
 
 @end

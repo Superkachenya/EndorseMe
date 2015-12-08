@@ -12,10 +12,11 @@
 
 +(NSMutableArray *)setUpDoctors
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Doctors" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DataSource" ofType:@"plist"];
     
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSMutableArray *doctorsArray  = [[NSMutableArray alloc] init];
+    
     NSArray *tempArrayN = [dict objectForKey:@"nameOfDoctor"];
     NSArray *tempArrayF = [dict objectForKey:@"faceOfDoctor"];
     NSArray *tempArrayR = [dict objectForKey:@"rating"];
