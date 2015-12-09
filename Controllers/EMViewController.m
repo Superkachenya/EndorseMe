@@ -32,6 +32,7 @@
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(skipButton:)];
     [swipeLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self.view addGestureRecognizer:swipeLeft];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
