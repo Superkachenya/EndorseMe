@@ -45,14 +45,14 @@
 }
 
 
-- (IBAction)plusButton:(id)sender
+- (IBAction)plusButton:(id)sender //swipe right
 {
     self.index++;
     self.doctor.rating = @(self.doctor.rating.integerValue +1);
     self.index = [self returnToTheBeggining];
     [self fillTheView];
 }
-- (IBAction)skipButton:(id)sender
+- (IBAction)skipButton:(id)sender //swipe left
 {
     self.index++;
     self.index = [self returnToTheBeggining];
@@ -67,6 +67,7 @@
     self.doctorsRating.text = [NSString stringWithFormat:@"%@", self.doctor.rating];
     self.doctorsDetails.text = self.doctor.details;
 }
+//swipe down
 - (IBAction)cancelButton:(id)sender {
     
     [self.delegate detailsViewcontrollerDismissedWithIndex:self.index];

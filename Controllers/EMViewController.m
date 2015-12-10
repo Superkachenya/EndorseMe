@@ -24,15 +24,7 @@
     
     _index = 0;
     [self fillTheView];
-   
-    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(plusButton:)];
-    [swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.view addGestureRecognizer:swipeRight];
-    
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(skipButton:)];
-    [swipeLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.view addGestureRecognizer:swipeLeft];
-    
+  
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -47,7 +39,7 @@
     return self.index;
         
 }
-- (IBAction)plusButton:(id)sender
+- (IBAction)plusButton:(id)sender //swipe right
 {
     self.index++;
     self.doctor.rating = @(self.doctor.rating.integerValue +1);
@@ -55,13 +47,14 @@
     [self fillTheView];
 
 }
-- (IBAction)skipButton:(id)sender
+- (IBAction)skipButton:(id)sender //swipe left
 {
     self.index++;
     self.index = [self returnToTheBeggining];
     [self fillTheView];
 
 }
+
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -71,6 +64,7 @@
         EMTVController.doctors = self.doctors;
         EMTVController.doctor = self.doctor;
     }
+    //swipe up
     if ([segue.identifier isEqualToString:@"ShowDetails"]) {
         EMDetailsViewController *EMDController = (EMDetailsViewController *)segue.destinationViewController;
         EMDController.doctors = self.doctors;
@@ -79,6 +73,7 @@
         EMDController.delegate = self;
     }
 }
+
 
 -(void)fillTheView
 {

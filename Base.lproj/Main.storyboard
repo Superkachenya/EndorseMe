@@ -92,12 +92,13 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="arrow_top"/>
                                 <connections>
-                                    <segue destination="LXR-A1-aOK" kind="presentation" identifier="ShowDetails" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="SgZ-kM-S8a"/>
+                                    <segue destination="LXR-A1-aOK" kind="presentation" identifier="ShowDetails" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="oLQ-Px-ZDA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BOu-bi-Th0" firstAttribute="top" secondItem="jUB-nM-vV8" secondAttribute="bottom" constant="6" id="0Wb-Ll-FLl"/>
                             <constraint firstItem="BOu-bi-Th0" firstAttribute="centerX" secondItem="xQY-5J-T8P" secondAttribute="centerX" id="2Rf-hm-wXZ"/>
@@ -127,6 +128,11 @@
                             <constraint firstItem="BOu-bi-Th0" firstAttribute="leading" secondItem="sOe-i0-Mv6" secondAttribute="leading" id="vTf-ug-aOr"/>
                             <constraint firstItem="STN-OK-CRm" firstAttribute="top" secondItem="sOe-i0-Mv6" secondAttribute="bottom" constant="1" id="xIo-cO-AqY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XWw-Xb-A4p" appends="YES" id="XEW-BS-ntm"/>
+                            <outletCollection property="gestureRecognizers" destination="2aI-5P-4J2" appends="YES" id="7iJ-xU-ev5"/>
+                            <outletCollection property="gestureRecognizers" destination="EHD-Xm-ZD1" appends="YES" id="APO-jm-XnJ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Aze-Vr-tmJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -137,6 +143,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="XWw-Xb-A4p">
+                    <connections>
+                        <segue destination="LXR-A1-aOK" kind="presentation" identifier="ShowDetails" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="NEU-qU-Wlc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="2aI-5P-4J2">
+                    <connections>
+                        <action selector="plusButton:" destination="BYZ-38-t0r" id="23o-j7-cHG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="EHD-Xm-ZD1">
+                    <connections>
+                        <action selector="skipButton:" destination="BYZ-38-t0r" id="nIm-um-lVk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="759" y="358"/>
         </scene>
@@ -177,6 +198,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zn6-t8-x6V">
                                 <rect key="frame" x="0.0" y="208" width="320" height="211"/>
                                 <animations/>
+                                <gestureRecognizers/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -209,6 +231,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6B5-6P-qbD" appends="YES" id="7XH-2P-LHy"/>
+                            <outletCollection property="gestureRecognizers" destination="KJB-gb-IhW" appends="YES" id="neI-Do-V6M"/>
+                            <outletCollection property="gestureRecognizers" destination="otg-bx-hcF" appends="YES" id="oE2-6i-QDW"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -219,8 +247,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7T5-as-XaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="6B5-6P-qbD">
+                    <connections>
+                        <action selector="cancelButton:" destination="LXR-A1-aOK" id="zR7-FY-K5E"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="KJB-gb-IhW">
+                    <connections>
+                        <action selector="plusButton:" destination="LXR-A1-aOK" id="IR3-jv-TQz"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="otg-bx-hcF">
+                    <connections>
+                        <action selector="skipButton:" destination="LXR-A1-aOK" id="iSR-PZ-kNU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="759" y="937"/>
+            <point key="canvasLocation" x="759" y="941"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="GWJ-t1-RYC">
@@ -342,7 +385,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGS-FL-1kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="358"/>
+            <point key="canvasLocation" x="1139" y="358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XMy-kW-eUF">
@@ -362,7 +405,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7j-Zx-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="358"/>
+            <point key="canvasLocation" x="370" y="358"/>
         </scene>
     </scenes>
     <resources>
@@ -374,4 +417,7 @@
         <image name="endolse_plus_sm" width="81" height="80"/>
         <image name="score_bg" width="180" height="201"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NEU-qU-Wlc"/>
+    </inferredMetricsTieBreakers>
 </document>
