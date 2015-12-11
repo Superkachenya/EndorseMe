@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Doctor.h"
 #import "EMTableViewCell.h"
-#import "EMCollectionViewController.h"
 #import "AddCharViewController.h"
 
 @interface EMTableViewController : UITableViewController <AddCharDelegate>

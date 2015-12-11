@@ -20,7 +20,9 @@ static NSString * const reuseIdentifier = @"EMCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
+
    
 }
 
@@ -58,19 +60,25 @@ static NSString * const reuseIdentifier = @"EMCell";
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+ 
+ 
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ [arrYears removeObjectAtIndex:indexPath.row];
+ [tableView reloadData];
+ }
+ }*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [self.doctors removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        [tableView reloadData];
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
