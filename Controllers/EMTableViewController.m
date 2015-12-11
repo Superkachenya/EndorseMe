@@ -60,14 +60,7 @@ static NSString * const reuseIdentifier = @"EMCell";
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
- 
- 
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- [arrYears removeObjectAtIndex:indexPath.row];
- [tableView reloadData];
- }
- }*/
+*/
 
 
 // Override to support editing the table view.
