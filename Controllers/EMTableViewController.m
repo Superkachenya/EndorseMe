@@ -13,7 +13,7 @@
 
 @end
 
-@implementation EMTableViewController
+@implementation EMTableViewController 
 
 static NSString * const reuseIdentifier = @"EMCell";
 
@@ -87,15 +87,39 @@ static NSString * const reuseIdentifier = @"EMCell";
 */
 
 
+
+#pragma mark - add character delegate
+-(void)cancelButtonDidPress
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)saveButtonDidPress:(Doctor *)newDoctor
+{
+    [self.doctors addObject:newDoctor];
+    
+     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.doctors count] - 1) inSection:0];
+     [self. tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+     [self dismissViewControllerAnimated:YES completion:nil];
+     
+}
+
+
+
 #pragma mark - Navigation
-/*
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"collectionView"]) {
-        EMTableViewController *EMTVController = (EMTableViewController *)segue.destinationViewController;
-        EMTVController.doctors = self.doctors;
-        EMTVController.doctor = self.doctor;
+    if ([segue.identifier isEqualToString:@"showCollection"]) {
+        EMCollectionViewController *EMColController = (EMCollectionViewController *)segue.destinationViewController;
+        EMColController.doctors = self.doctors;
+        EMColController.doctor = self.doctor;
+    }
+    if ([segue.identifier isEqualToString:@"AddChar"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddCharViewController *addChar = [navigationController viewControllers][0];
+        addChar.delegate = self;
     }
 }
-*/
+
 @end

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Doctor.h"
 #import "EMTableViewCell.h"
+#import "EMCollectionViewController.h"
+#import "AddCharViewController.h"
 
-@interface EMTableViewController : UITableViewController
+@interface EMTableViewController : UITableViewController <AddCharDelegate>
 
 @property (nonatomic, strong) NSMutableArray *doctors;
 @property (nonatomic,strong) Doctor *doctor;
