@@ -110,11 +110,7 @@ static NSString * const reuseIdentifier = @"EMCell";
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showCollection"]) {
-        EMCollectionViewController *EMColController = (EMCollectionViewController *)segue.destinationViewController;
-        EMColController.doctors = self.doctors;
-        EMColController.doctor = self.doctor;
-    }
+    
     if ([segue.identifier isEqualToString:@"AddChar"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         AddCharViewController *addChar = [navigationController viewControllers][0];
