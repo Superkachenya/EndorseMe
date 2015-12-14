@@ -117,6 +117,11 @@ static NSString * const reuseIdentifier = @"EMCell";
         AddCharViewController *addChar = [navigationController viewControllers][0];
         addChar.delegate = self;
     }
+    if ([segue.identifier isEqualToString:@"showCollection"]) {
+        UINavigationController *naviController = segue.destinationViewController;
+        EMCollectionViewController *EMCVC = [naviController viewControllers][0];
+        EMCVC.doctors = self.doctors;
+    }
 }
 
 @end
